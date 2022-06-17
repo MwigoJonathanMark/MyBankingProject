@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mybankingproject.FXMLController">
+   <children>
+       <AnchorPane fx:id="devsScreen" opacity="0.0" prefHeight="326.0" prefWidth="499.0" style="-fx-backgroundColor: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+            <children>
+              <Button fx:id="dialogOkBtn" layoutX="250.0" layoutY="285.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Ok" />
+              <Button fx:id="dialogCancelBtn" layoutX="363.0" layoutY="285.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Cancel" />
+              <TextArea fx:id="projectContribNames" editable="false" layoutX="33.0" layoutY="60.0" prefHeight="214.0" prefWidth="457.0" style="-fx-background-insets: 0;" text="Contributors to this project">
+                 <font>
+                    <Font size="18.0" />
+                 </font>
+              </TextArea>
+              <Label layoutX="14.0" layoutY="14.0" prefHeight="45.0" prefWidth="467.0" text="Contributors to this project">
+                 <font>
+                    <Font size="32.0" />
+                 </font>
+              </Label>
+            </children>
+      </AnchorPane>
+      <AnchorPane fx:id="progressScreen" opacity="0.0" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="51.0" layoutY="96.0" prefHeight="90.0" prefWidth="500.0" text="Logging in, Please wait...">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Label>
+            <ProgressIndicator fx:id="progressShow" layoutX="275.0" layoutY="197.0" prefHeight="100.0" prefWidth="100.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loginForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="371.0" prefWidth="600.0" style="-fx-backgroundColor: white;">
+         <children>
+            <Label layoutX="48.0" layoutY="151.0" prefHeight="34.0" prefWidth="99.0" text="User Name:" textAlignment="RIGHT">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="48.0" layoutY="210.0" prefHeight="34.0" prefWidth="99.0" text="Password:" textAlignment="RIGHT">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userNameTxt" layoutX="138.0" layoutY="139.0" prefHeight="34.0" prefWidth="200.0" promptText="Enter user name here" />
+            <TextField fx:id="passwordTxt" layoutX="138.0" layoutY="199.0" prefHeight="34.0" prefWidth="200.0" promptText="Enter password here" />
+            <Button fx:id="loginBtn" layoutX="156.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#loginBtnClicked" prefHeight="38.0" prefWidth="82.0" text="Log me in" />
+            <Label fx:id="errorTxt" layoutX="142.0" layoutY="56.0" prefHeight="38.0" prefWidth="302.0" />
+            <ImageView fx:id="loginImage" fitHeight="336.0" fitWidth="200.0" layoutX="377.0" layoutY="20.0" mouseTransparent="true" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../Pictures/Logo%20Maker%20with%20Graphic%20Design%20and%20Ads%20Designer/JpgImage/TransparentImg.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="welcomeScreen" opacity="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-backgroundColor: white;">
+         <children>
+            <Button fx:id="okWelcomeBtn" layoutX="274.0" layoutY="311.0" mnemonicParsing="false" onAction="#okWelcomeBtnAction" prefHeight="38.0" prefWidth="108.0" text="Ok" />
+            <Button fx:id="cancelWelcomeBtn" layoutX="450.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#cancelWelcomeBtnClicked" prefHeight="38.0" prefWidth="108.0" text="Cancel" />
+            <Label layoutX="94.0" layoutY="92.0" prefHeight="149.0" prefWidth="388.0" text="Dear Admin,\n\tWelcome to our app">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="commentPage" opacity="0.0" prefHeight="591.0" prefWidth="744.0" style="-fx-background-color: white;">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="637.0" prefWidth="745.0" style="--fx-backgroundColor:navy blue;">
+               <children>
+                  <Button fx:id="commentBackBtn" cancelButton="true" layoutX="42.0" layoutY="597.0" onMouseClicked="#commentBackBtnClicked" prefHeight="27.0" prefWidth="79.0" text="Back" />
+                  <Separator layoutX="18.0" layoutY="575.0" prefHeight="3.0" prefWidth="709.0" />
+                  <Button fx:id="submitBtn" layoutX="547.0" layoutY="598.0" mnemonicParsing="false" onMouseClicked="#submitBtnClicked" text="Submit" />
+                  <TextArea fx:id="clientCommentTxtArea" layoutX="42.0" layoutY="71.0" prefHeight="473.0" prefWidth="645.0" />
+                  <Label layoutX="42.0" layoutY="14.0" text="Comments:">
+                     <font>
+                        <Font name="Arial" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="viewClientPage" opacity="0.0" prefHeight="586.0" prefWidth="744.0" style="-fx-background-color: white;">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="741.0" prefWidth="745.0" style="--fx-backgroundColor:white;">
+               <children>
+                  <ImageView fx:id="clientProfileView" fitHeight="166.0" fitWidth="193.0" layoutX="510.0" layoutY="14.0" pickOnBounds="true">
+                     <image>
+                        <Image fx:id="clientProfileViewPhoto" url="@../../../../../Pictures/pikachu_avatar.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="backBtn" layoutX="42.0" layoutY="687.0" mnemonicParsing="false" onMouseClicked="#backBtnClicked" prefHeight="27.0" prefWidth="79.0" text="Back" />
+                  <Button fx:id="nextPreviewBtn" layoutX="598.0" layoutY="683.0" mnemonicParsing="false" onMouseClicked="#nextPreviewBtnClicked" prefHeight="36.0" prefWidth="73.0" text="Next" />
+                  <Button fx:id="previousPreviewBtn" layoutX="446.0" layoutY="683.0" mnemonicParsing="false" onMouseClicked="#previousPreviewBtnClicked" prefHeight="35.0" prefWidth="64.0" text="Previous" />
+                  <Separator layoutX="19.0" layoutY="661.0" prefHeight="3.0" prefWidth="709.0" />
+                  <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="36.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Pictures/Logo%20Maker%20with%20Graphic%20Design%20and%20Ads%20Designer/JpgImage/avilLighthaed.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="43.0" layoutY="129.0" prefHeight="41.0" prefWidth="178.0" text="My Bank Title">
+                     <font>
+                        <Font name="Arial" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="46.0" layoutY="199.0" prefHeight="31.0" prefWidth="173.0" text="P.O.Box #####, District, Country" />
+                  <Label layoutX="45.0" layoutY="177.0" prefHeight="24.0" prefWidth="137.0" text="District, Country" />
+                  <Label layoutX="46.0" layoutY="276.0" text="Sur Name:" />
+                  <Label fx:id="surNameTxt" layoutX="107.0" layoutY="268.0" prefHeight="33.0" prefWidth="160.0" />
+                  <Label layoutX="281.0" layoutY="268.0" text="First Name:" />
+                  <Label fx:id="firstNameTxt" layoutX="359.0" layoutY="260.0" prefHeight="33.0" prefWidth="221.0" />
+                  <Label layoutX="46.0" layoutY="316.0" text="Date of Birth:" />
+                  <Label fx:id="dOBTxt" layoutX="124.0" layoutY="311.0" prefHeight="28.0" prefWidth="126.0" />
+                  <Label layoutX="281.0" layoutY="316.0" text="Nationality:" />
+                  <Label fx:id="nationalityTxt" layoutX="363.0" layoutY="308.0" prefHeight="34.0" prefWidth="166.0" />
+                  <Label layoutX="46.0" layoutY="354.0" prefHeight="17.0" prefWidth="49.0" text="Address:" />
+                  <Label fx:id="addressTxt" layoutX="101.0" layoutY="346.0" prefHeight="33.0" prefWidth="119.0" />
+                  <Label layoutX="281.0" layoutY="354.0" text="Telephone Number:" />
+                  <Label fx:id="phoneNoTxt" layoutX="399.0" layoutY="343.0" prefHeight="39.0" prefWidth="211.0" />
+                  <Label layoutX="45.0" layoutY="392.0" text="Residence:" />
+                  <Label fx:id="residenceTxt" layoutX="112.0" layoutY="384.0" prefHeight="34.0" prefWidth="150.0" />
+                  <Label layoutX="281.0" layoutY="392.0" text="Marital Status:" />
+                  <Label fx:id="maritalStatusTxt" layoutX="373.0" layoutY="383.0" prefHeight="36.0" prefWidth="131.0" />
+                  <Label layoutX="45.0" layoutY="429.0" text="Gender:" />
+                  <Label fx:id="genderTxt" layoutX="94.0" layoutY="420.0" prefHeight="36.0" prefWidth="133.0" />
+                  <Label layoutX="43.0" layoutY="469.0" text="ID, Passport or Driving Permit:" />
+                  <ImageView fx:id="iDView" fitHeight="150.0" fitWidth="291.0" layoutX="61.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image fx:id="iDImage" url="@../../../../../Pictures/Logo%20Maker%20with%20Graphic%20Design%20and%20Ads%20Designer/JpgImage/avilLighthaed.jpeg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="editorPage" layoutY="-5.0" opacity="0.0" prefHeight="591.0" prefWidth="744.0" style="-fx-background-color: white;">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="741.0" prefWidth="745.0" style="-fx-backgroundColor: white;">
+               <children>
+                  <ImageView fx:id="clientProfilePhoto" fitHeight="166.0" fitWidth="113.0" layoutX="510.0" layoutY="14.0" pickOnBounds="true">
+                     <image>
+                        <Image fx:id="clientProfileImage" url="@../../../../../Pictures/Logo%20Maker%20with%20Graphic%20Design%20and%20Ads%20Designer/JpgImage/avilLighthaed.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="uploadClientProfilePhotoBtn" layoutX="548.0" layoutY="189.0" mnemonicParsing="false" onMouseClicked="#uploadClientProfilePhotoBtnClicked" prefHeight="25.0" prefWidth="118.0" text="Load client Photo" />
+                  <TextField fx:id="txtSurName" layoutX="43.0" layoutY="267.0" prefHeight="35.0" prefWidth="201.0" promptText="Sur Name" />
+                  <TextField fx:id="txtFirstName" layoutX="42.0" layoutY="329.0" prefHeight="35.0" prefWidth="201.0" promptText="First Name" />
+                  <DatePicker fx:id="txtDOB" layoutX="43.0" layoutY="392.0" prefHeight="35.0" prefWidth="201.0" promptText="Date of birth" />
+                  <TextField fx:id="txtAddress" layoutX="309.0" layoutY="329.0" prefHeight="35.0" prefWidth="201.0" promptText="Address" />
+                  <TextField fx:id="txtPhone" layoutX="309.0" layoutY="392.0" prefHeight="35.0" prefWidth="201.0" promptText="Telephone Number" />
+                  <TextField fx:id="txtResidence" layoutX="309.0" layoutY="455.0" prefHeight="35.0" prefWidth="201.0" promptText="District of residence" />
+                  <TextField fx:id="txtNationality" layoutX="309.0" layoutY="267.0" prefHeight="35.0" prefWidth="201.0" promptText="Nationality" />
+                  <Button fx:id="showClientProfileBtn" layoutX="572.0" layoutY="609.0" mnemonicParsing="false" onMouseClicked="#showClientProfileBtnClicked" text="Show client profile" />
+                  <Button fx:id="saveRecordBtn" layoutX="42.0" layoutY="669.0" mnemonicParsing="false" onMouseClicked="#saveRecordBtnClicked" prefHeight="27.0" prefWidth="79.0" text="Save record" />
+                  <Button fx:id="newRecordBtn" layoutX="42.0" layoutY="628.0" mnemonicParsing="false" onMouseClicked="#newRecordBtnClicked" prefHeight="31.0" prefWidth="78.0" text="New record" />
+                  <Button fx:id="nextBtn" layoutX="593.0" layoutY="669.0" mnemonicParsing="false" onMouseClicked="#nextBtnClicked" prefHeight="36.0" prefWidth="73.0" text="Next" />
+                  <Button fx:id="exitBtn" layoutX="446.0" layoutY="670.0" mnemonicParsing="false" onMouseClicked="#exitBtnClicked" prefHeight="35.0" prefWidth="64.0" text="Exit" />
+                  <Button fx:id="uploadIDBtn" layoutX="309.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#uploadIDBtnClicked" prefHeight="35.0" prefWidth="201.0" text="Upload Identification Doc" />
+                  <Separator layoutX="17.0" layoutY="574.0" prefHeight="3.0" prefWidth="709.0" />
+                  <ImageView fitHeight="92.0" fitWidth="92.0" layoutX="36.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Pictures/Logo%20Maker%20with%20Graphic%20Design%20and%20Ads%20Designer/JpgImage/avilLighthaed.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="43.0" layoutY="129.0" prefHeight="41.0" prefWidth="178.0" text="My Bank Title">
+                     <font>
+                        <Font name="Arial" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="46.0" layoutY="199.0" prefHeight="31.0" prefWidth="173.0" text="P.O.Box #####, District, Country" />
+                  <Label layoutX="45.0" layoutY="177.0" prefHeight="24.0" prefWidth="137.0" text="District, Country" />
+                        <RadioButton fx:id="rdMarriedBtn" accessibleText="Marital Status" layoutX="50.0" layoutY="548.0" mnemonicParsing="false" text="Married">
+                          <toggleGroup>
+                            <ToggleGroup fx:id="group" />
+                          </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rdSingleBtn" accessibleText="Marital Status" layoutX="50.0" layoutY="513.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="87.0" text="Single">
+                          <toggleGroup>
+                            <ToggleGroup fx:id="group" />
+                          </toggleGroup>
+                        </RadioButton>
+                  <ChoiceBox fx:id="genderChoiceBox" accessibleText="Gender" layoutX="45.0" layoutY="460.0" prefWidth="150.0" value="Gender">
+                    <items>
+                      <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Unknown" />
+                        <String fx:value="Male" />
+                        <String fx:value="Female" />
+                      </FXCollections>
+                    </items>
+                  </ChoiceBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</StackPane>
